@@ -14,13 +14,14 @@
   <script type="text/babel">
     const root = document.getElementById("root");
 
-    const Title = (
+    const Title = () => (
+      //arrow function
       <h3 id="title" onMouseEnter={() => console.log("mouse")}>
         Hello i am a title
       </h3>
     );
 
-    const button = (
+    const Button = () => (
       <button
         style={{
           backgroundColor: "tomato",
@@ -31,7 +32,12 @@
       </button>
     );
 
-    const container = React.createElement("div", null, [button, Title]);
-    ReactDOM.render(container, root);
+    const Container = () => (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
